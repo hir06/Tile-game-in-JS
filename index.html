@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tiles</title>
+    <!--Meta-->
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta http-equiv='Cache-control' content='no-cache' />
+    <meta http-equiv='Expires' content='-1' />
+    <meta http-equiv='pragma' content='no-cache' />
+
+    <!--CSS-->
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/materialize.min.css" rel="stylesheet" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+    <div class="page-wrap">
+
+        <header>
+
+        </header>
+
+        <div class="leftside-nav">
+            <a class="onepush-logo"><i class="material-icons">games</i><h4>Play Tiles</h4></a><br />
+
+            <div class="tile-desc"><i class="material-icons left">swap_vert</i> Total moves:<span id="move"></span></div>
+            <div class="tile-desc"><i class="material-icons left">av_timer</i> Time:<span id="currentTime"></span></div>
+            <input type="button" class="btn" onclick="undo()" value="undo"><br/> <br/>
+            <span class="tile-desc">Moves Details:</span>
+            <div id="panel"></div>
+            <table>
+                <tr>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tile-container">
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="grid-container">
+                        <h2> Initial </h2>
+
+                        <div class="grid start">
+                            <div class="row">
+                                <div class="cell" data-pos="0,0"><span id="00">7</span></div>
+                                <div class="cell" data-pos="0,1"><span id="01">5</span></div>
+                                <div class="cell" data-pos="0,2"><span id="02">12</span></div>
+                                <div class="cell" data-pos="0,3"><span id="03">4</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="cell" data-pos="1,0"><span id="10">10</span></div>
+                                <div class="cell" data-pos="1,1"><span id="11">6</span></div>
+                                <div class="cell" data-pos="1,2"><span id="12">1</span></div>
+                                <div class="cell" id="empty" data-pos="1,3"><span id="13">&nbsp; </span></div>
+                            </div>
+                            <div class="row">
+                                <div class="cell" data-pos="2,0"><span id="20">3</span></div>
+                                <div class="cell" data-pos="2,1"><span id="21">2</span></div>
+                                <div class="cell" data-pos="2,2"><span id=22>11</span></div>
+                                <div class="cell" data-pos="2,3"><span id=23>9</span></div>
+
+                            </div>
+                            <div class="row">
+                                <div class="cell" data-pos="3,0"><span id="30">13</span></div>
+                                <div class="cell" data-pos="3,1"><span id="31">8</span></div>
+                                <div class="cell" data-pos="3,2"><span id=32>15</span></div>
+                                <div class="cell" data-pos="3,3"><span id=33>14</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col l2">&nbsp;</div>
+                <div class="col s12 m6 l4">
+                    <div class="grid-container">
+                        <h2> Goal </h2>
+                        <div class="grid goal">
+                            <div class="row">
+                                <div class="cell"><span>1</span></div>
+                                <div class="cell"><span>2</span></div>
+                                <div class="cell"><span>3</span></div>
+                                <div class="cell"><span>4</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="cell"><span>5</span></div>
+                                <div class="cell"><span>6</span></div>
+                                <div class="cell"><span>7</span></div>
+                                <div class="cell"><span>8</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="cell"><span>9</span></div>
+                                <div class="cell"><span>10</span></div>
+                                <div class="cell"><span>11</span></div>
+                                <div class="cell"><span>12</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="cell"><span>13</span></div>
+                                <div class="cell"><span>14</span></div>
+                                <div class="cell"><span>15</span></div>
+                                <div class="cell" id="goalEmpty"><span>&nbsp;</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div>
+        <!--sucess Modal -->
+        <div id="onepush-modal" class="modal">
+            <div class="modal-content">
+                <h4>Congratulations!!</h4>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="tile-desc">
+                            you hae successfully completed challange.<br/> you took <span id="time"> seconds to complete it.
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-action modal-close waves-effect waves-light btn"><i class="material-icons left">done</i>done </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+
+    
+
+            <!--JS-->
+      
+            <script src="js_setup/jquery-2.1.1.min.js"></script>
+            <script src="js_setup/materialize.min.js"></script>
+            <script src="js_setup/app.js"></script>
+
+</body>
+
+</html>
